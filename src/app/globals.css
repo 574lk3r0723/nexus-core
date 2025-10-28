@@ -1,17 +1,9 @@
-﻿/* src/app/globals.css */
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
-@tailwind utilities;
 
-/* === KEYFRAMES MUST COME FIRST === */
 @keyframes pulse-core {
   0%, 100% { transform: scale(1); filter: brightness(1); }
   50% { transform: scale(1.05); filter: brightness(2); }
-}
-
-@keyframes lattice-drift {
-  0% { transform: translateZ(0) rotateX(0) rotateY(0); }
-  100% { transform: translateZ(-100px) rotateX(5deg) rotateY(10deg); }
 }
 
 @keyframes glyph-float {
@@ -19,7 +11,15 @@
   50% { transform: translateY(-30px) rotate(3deg); opacity: 1; }
 }
 
-/* === NOW SAFE TO USE @apply === */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@tailwind utilities;
+
 .nexus-core {
   perspective: 1000px;
   background: radial-gradient(circle at center, #0a0a1f 0%, #000 70%);
@@ -34,12 +34,4 @@
   @apply animate-glyph-float;
   font-family: 'Courier New', monospace;
   text-shadow: 0 0 20px currentColor;
-}
-
-/* Fix ping animation */
-@keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
 }
