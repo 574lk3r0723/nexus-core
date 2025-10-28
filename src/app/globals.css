@@ -1,6 +1,8 @@
-﻿@tailwind base;
+﻿/* src/app/globals.css */
+@tailwind base;
 @tailwind components;
 
+/* KEYFRAMES FIRST */
 @keyframes pulse-core {
   0%, 100% { transform: scale(1); filter: brightness(1); }
   50% { transform: scale(1.05); filter: brightness(2); }
@@ -12,10 +14,7 @@
 }
 
 @keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
+  75%, 100% { transform: scale(2); opacity: 0; }
 }
 
 @tailwind utilities;
